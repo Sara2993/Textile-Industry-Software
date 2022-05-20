@@ -1,0 +1,60 @@
+<form [formGroup]="register">
+    <b>
+        <h1 class="heading">STOCK MAINTAIN</h1>
+    </b>
+    <div action="#" id="form" method="post">
+        <div class="container">
+            <div class="tab tab-2">
+                <div class="field">
+                    <label for="report">S.NO :</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your S.NO"
+                        id="Serial_no" formControlName="Serial_no">
+                </div>
+                <div class="field">
+                    <label for="date-of-birth">Date :</label>
+                    <input type="date" name="date" id="date" formControlName="date">
+                </div>
+                <div class="field">
+                    <label for="fname">Item Name:</label>
+                    <input type="text" name="Iname" placeholder="Enter your Item Name" id="Iname"
+                        formControlName="item_name">
+                </div>
+                <div class="field">
+                    <label for="report">Qty :</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
+                        placeholder="Enter your Quantity" id="quantity" formControlName="quantity">
+                </div>
+                <div class="buttons">
+
+                    <button id="btn" (click)="Register(this.register.value)">OK</button>
+
+                    <button id="btn">Cancel</button>
+                     <button (click)="getuser()">fetch</button>
+                </div>
+                <table class="table bg-light">
+                    <thead class="text-dark">
+                        <tr>
+                            <th scope="col">Serial_no</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Qty</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="text-dark">
+                        <tr *ngFor="let obj of object">
+                            <td scope="row">{{obj.Serial_no}}</td>
+                            <td scope="row">{{obj.date}}</td>
+                            <td scope="row">{{obj.item_name}}</td>
+                            <td scope="row">{{obj.quantity}}</td>
+                            <td scope="row"><button class="btn btn-primary"
+                                    (click)="deleteuser(obj,obj)">delete</button></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+<form class="col-lg-8" [formGroup]="contact" (ngSubmit)="send(this.contact.value)">
+    <b>
+        <h1 class="heading">CONTACT</h1>
+    </b>
+    <div action="#" id="form" method="post">
+        <div class="field">
+            <label for="email id"> Email id:</label>
+            <input type="text" name="email id" placeholder=" Enter your email id" id="email id"
+                formControlName="email_id">
+
+        </div>
+        <!-- <div class="validator">
+            <span class="text-danger"
+                *ngIf="register.controls['email_id'].touched && register.hasError('required','email_id')">
+                *email is required</span>
+
+        </div> -->
+        <div class="field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" formControlName="password">
+
+        </div>
+        <!-- <div class="validate"> <span class="text-danger"
+                *ngIf="password.controls['password'].touched">
+                *password is required</span>
+        </div> -->
+        <div class="buttons">
+
+            <button class="btn btn-md btn-dark"  type="submit">Send</button>
+
+        </div>
+    </div>
+    
+</form>

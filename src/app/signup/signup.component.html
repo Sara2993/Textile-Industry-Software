@@ -1,0 +1,113 @@
+<form [formGroup]="register" >
+    <b>
+        <h1 class="heading">SIGN UP FORM</h1>
+    </b>
+    <div action="#" id="form" method="post">
+        <div class="container">
+            <div class="tab tab-2">
+                <div class="field">
+                    <label for="fname">first name :</label>
+                    <input type="text" name="fname" placeholder=" Enter your first name" formControlName="first_name">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['first_name'].touched && register.hasError('required','first_name')">
+                        *firstname is required</span>
+                </div>
+                <div class="field">
+                    <label for="lname"> Last Name :</label>
+                    <input type="text" name="lname" placeholder=" Enter your last Name" id="last_name"
+                        formControlName="last_name">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['last_name'].touched && register.hasError('required','last_name')">
+                        *lastname is required</span>
+
+                </div>
+                <div class="field">
+                    <label for="email id"> email id:</label>
+                    <input type="text" name="email id" placeholder=" Enter your email id" id="email id"
+                        formControlName="email_id">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['email_id'].touched && register.hasError('required','email_id')">
+                        *email is required</span>
+
+                </div>
+                <div class="field">
+                    <label for="password">password:</label>
+                    <input type="password" name="password" id="password" formControlName="password">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['password'].touched && register.hasError('required','password')">
+                        *password is required</span>
+
+                </div>
+                <div class="field">
+                    <label for="password"> Confirm password:</label>
+                    <input type="password" name="password" id="password1" formControlName="confirm_password">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['confirm_password'].touched && register.hasError('required','confirm_password')">
+                        *password is required</span>
+
+                </div>
+
+                <div class="field">
+                    <label for="report">Contact Number:</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
+                        placeholder=" Enter your contact Number" id="report" formControlName="contact_no">
+
+                </div>
+                <div class="validator">
+                    <span class="text-danger"
+                        *ngIf="register.controls['contact_no'].touched && register.hasError('required','contact_no')">
+                        *contact is required</span>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button id="btn" (click)="Register(this.register.value)">Register</button>
+                    <button id="btn">Cancel</button>
+                    <button (click)="getuser()">fetch</button>
+                </div>
+            </div>
+        </div>
+        <table class="table bg-light">
+            <thead class="text-dark">
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email id</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Confirm Password</th>
+                    <th scope="col">phone no</th>
+
+                </tr>
+            </thead>
+            <tbody class="text-dark">
+                <tr *ngFor="let obj of object">
+                    <td scope="row">{{obj.first_name}}</td>
+                    <td scope="row">{{obj.last_name}}</td>
+                    <td scope="row">{{obj.email_id}}</td>
+                    <td scope="row">{{obj.password}}</td>
+                    <td scope="row">{{obj.confirm_password}}</td>
+                    <td scope="row">{{obj.contact_no}}</td>
+
+                      <td scope="row"><button class="btn btn-primary" (click)="deleteuser(obj,obj)">Delete</button></td>
+      
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
