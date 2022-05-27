@@ -1,0 +1,38 @@
+<form [formGroup]="loginForm">
+    <b>
+        <h1 class="heading">ADMIN FORM</h1>
+    </b>
+    <div action="#" id="form" method="post">
+        <div class="container">
+            <div class="tab tab-2">
+                <div class="field">
+                    <label for="fname">User name :</label>
+                    <input type="text" name="username" placeholder=" Enter your user name" id="username"
+                        formControlName="username">
+                </div>
+                <!-- <div class="validate">
+                    <span class="text-danger"
+                        *ngIf="loginform.controls['username'].touched && loginform.hasError('required','username')">
+                        *Username is required</span>
+
+                </div> -->
+                <div class="field">
+                    <label for="password">password:</label>
+                    <input type="password" name="password" id="password" formControlName="password">
+
+                </div>
+                <!-- <div class="validate"> <span class="text-danger"
+                        *ngIf="loginform.controls['password'].touched && loginform.hasError('required','password')">
+                        *password is required</span>
+                </div> -->
+                <div class="buttons">
+
+                    <button id="btn"  (click)="alogin(this.loginForm.value)" [routerLink]="['/dashboard']">login</button>
+                    <!-- <button id="btn">Ok</button> -->
+                    <button id="btn">cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

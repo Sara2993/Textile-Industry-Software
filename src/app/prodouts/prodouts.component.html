@@ -1,3 +1,14 @@
+<!-- <form> -->
+    <div class="form-outline">
+            <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
+          </div>
+        
+        
+    <!-- <div class="search">
+        <input type="search" placeholder="Type to search">
+        <button type="search" class="next">Search</button>
+    </div>
+</form> -->
 <form [formGroup]="register">
     <b>
         <h1 class="heading">STOCK MAINTAIN</h1>
@@ -29,7 +40,7 @@
                     <button id="btn" (click)="Register(this.register.value)">OK</button>
 
                     <button id="btn">Cancel</button>
-                     <button (click)="getuser()">fetch</button>
+                    <button (click)="getuser()">fetch</button>
                 </div>
                 <table class="table bg-light">
                     <thead class="text-dark">
@@ -42,7 +53,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-dark">
-                        <tr *ngFor="let obj of object">
+                        <tr *ngFor="let obj of object |filter:term">
                             <td scope="row">{{obj.Serial_no}}</td>
                             <td scope="row">{{obj.date}}</td>
                             <td scope="row">{{obj.item_name}}</td>

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 const cors = require('cors');
-const setmail = require('./send');
+const setmail = require('./sendemail');
 
 
 app.use(express.static('public'));
@@ -23,10 +23,10 @@ app.get('/', function (request, response) {
    
     var object ={
         email_id:request.body.email_id,
-        password:request.body.password,
+        message:request.body.message,
         
     }
-    setmail.getemail(request.body.email_id);
+    setmail.getemail(request.body.message);
     console.log(object);
 })
   app.listen(port, (err) => {

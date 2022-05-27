@@ -13,7 +13,7 @@ export class ProdoutsComponent implements OnInit {
   object:any =[];
   adduser!:FormGroup;
   alldata:any;
-
+  term!:string;
   constructor(private fb:FormBuilder,private api:ApiServiceService) {
     this.register = this.fb.group({
     Serial_no:['',Validators.required],
@@ -60,4 +60,6 @@ export class ProdoutsComponent implements OnInit {
     })
        
   }
-}
+ 
+  }
+

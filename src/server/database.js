@@ -6,6 +6,13 @@ var username = "apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w";
 var password = "e455d34a303110b468819fbc14388b5e";
  
 var cloudant = Cloudant({ url: url, username: username, password: password });
+var foodchain=cloudant.use('textile_industry');
+data={
+  selector:{
+    id:'user',
+    password:'saraswathi'
+  }
+}
  
 
  
@@ -34,4 +41,5 @@ del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
 
-module.exports = { get, getId, insert,del_id,create,mail };
+
+module.exports = { foodchain,get, getId, insert,del_id,create };

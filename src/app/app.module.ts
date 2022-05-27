@@ -14,6 +14,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ProdoutsComponent } from './prodouts/prodouts.component';
 import { EmailComponent } from './email/email.component';
 import { AddressComponent } from './address/address.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AdminComponent } from './admin/admin.component';
+import { MeterialsComponent } from './meterials/meterials.component';
+import { SupplierComponent } from './supplier/supplier.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,11 @@ import { AddressComponent } from './address/address.component';
     AboutUsComponent,
     ProdoutsComponent,
     EmailComponent,
-    AddressComponent
+    AddressComponent,
+    AdminComponent,
+    MeterialsComponent,
+    SupplierComponent,
+    DashboardComponent
    
   ],
   imports: [
@@ -34,7 +43,8 @@ import { AddressComponent } from './address/address.component';
     AppRoutingModule,FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule,FormsModule
+    MatIconModule,FormsModule,
+    Ng2SearchPipeModule
     
   ],
   providers: [],

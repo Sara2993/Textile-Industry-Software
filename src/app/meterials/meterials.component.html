@@ -1,0 +1,110 @@
+<!-- <form> -->
+<!-- <div class="form-outline">
+    <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
+</div> -->
+
+
+<!-- <div class="search">
+        <input type="search" placeholder="Type to search">
+        <button type="search" class="next">Search</button>
+    </div>
+</form> -->
+<form [formGroup]="myform">
+    <b>
+        <h1 class="heading">ADD PRODUCTS</h1>
+    </b>
+    <div action="#" id="form" method="post">
+
+        <div class="container">
+            <div class="tab tab-2">
+                <div class="field">
+                    <label for="report">S.NO :</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your S.NO"
+                        id="Serial_no" formControlName="Serial_no">
+                </div>
+                <div class="field">
+                    <label for="Pro.ID">Pro.ID:</label>
+                    <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your Pro.ID"
+                        id="Pro.ID" formControlName="Pro_ID">
+                </div>
+                <!-- <div class="field">
+                    <label for="Pro.Name">Pro.Name:</label>
+                    <input type="text" name="Pro.Name" placeholder="Enter your Item Name" id="Pro_Name"
+                        formControlName="Pro_name">
+                </div> -->
+                <div class="field">
+                <label for="cars" >Pro.Name:</label>
+                <select name="products" class="products" formControlName="Pro_name" >
+                    <option value="select">select</option>
+                    <option value="cotton">Cotton</option>
+                    <option value="silk">Silk</option>
+                    <option value="Polyester">Polyester</option>
+                    <option value="denium">Denium</option>
+                </select>
+                </div>
+                <div class="field">
+                    <label for="cars" >Sup.ID:</label>
+                    <select name="products" class="products" formControlName="sup_ID"  >
+                        <option *ngFor="let sup of object1">{{sup. Serial_id}}</option>
+                    </select>
+                    </div>
+                    <div class="field">
+                        <label for="Pro.ID">SUP.name:</label>
+                        <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your Pro.ID"
+                            id="Pro.ID" formControlName="sup_name">
+                    </div>
+                <div class="field">
+                    <label for="report">Qty :</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
+                        placeholder="Enter your Quantity" id="quantity" formControlName="quantity">
+                </div>
+                <div class="field">
+                    <label for="report">Cost :</label>
+                    <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your Cost"
+                        id="Cost" formControlName="Cost">
+                </div>
+                <div class="buttons">
+
+                    <button id="btn" (click)="Register(this.myform.value)" >OK</button>
+                    
+
+                    <button id="btn">Cancel</button>
+                    <!-- <button (click)="getmat()">fetch</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+                <!-- <table class="table bg-light">
+                    <thead class="text-dark">
+                        <tr>
+                            <th scope="col">Serial_no</th>
+                            <th scope="col">Pro_ID</th>
+                            <th scope="col">Pro_name</th>
+                            <th scope="col">sup_name</th>
+                            <th scope="col">sup_ID</th>
+                            <th scope="col">quantity</th>
+                            <th scope="col">Cost</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class="text-dark">
+                        <tr>
+                        <tr *ngFor="let obj of object |filter:term">
+                            <td scope="row">{{obj.Serial_no}}</td>
+                            <td scope="row">{{obj.Pro_ID}}</td>
+                            <td scope="row">{{obj.Pro_name}}</td>
+                            <td scope="row">{{obj.sup_name}}</td>
+                            <td scope="row">{{obj.sup_ID}}</td>
+                            <td scope="row">{{obj.quantity}}</td>
+                            <td scope="row">{{obj.Cost}}</td>
+
+                            <td scope="row"><button class="btn btn-primary"
+                                    (click)="deleteuser(obj,obj)">delete</button></td> 
+
+                        </tr>
+                    </tbody>
+                </table> -->
+
+    

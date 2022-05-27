@@ -17,7 +17,8 @@ import { ApiServiceService } from '../apiservices.service';
       this.contact= this.fb.group({
         
         email_id:['',Validators.required],
-        password:['',Validators.required],
+        message:['',Validators.required],
+
       })
     }
     send(Formvalue:NgForm){
@@ -28,6 +29,5 @@ import { ApiServiceService } from '../apiservices.service';
         
       })
     }
-    get password(){return this.contact.get('password');}
-    get email_id(){return this.contact.get('email_id');}
+    
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
 import { ApiServiceService } from '../apiservices.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -65,6 +66,7 @@ export class SignupComponent implements OnInit {
     })
        
      }
+     
   }
 
 

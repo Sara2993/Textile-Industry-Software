@@ -8,6 +8,12 @@ import { MainComponent } from './main/main.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProdoutsComponent } from './prodouts/prodouts.component';
 import { EmailComponent } from './email/email.component';
+import { AddressComponent } from './address/address.component';
+import { AdminComponent } from './admin/admin.component';
+import { MeterialsComponent } from './meterials/meterials.component';
+import { SupplierComponent } from './supplier/supplier.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 const routes: Routes = [
 {path:'',component:LoginComponent},
 {path:'main',component:MainComponent},
@@ -15,9 +21,13 @@ const routes: Routes = [
 {path:'signup',component:SignupComponent},
 {path:'about',component:AboutUsComponent},
 {path:'home',component:HomeComponent},
-{path:'products',component:ProdoutsComponent},
-{path:'email',component:EmailComponent}
-
+{path:'prodouts',component:ProdoutsComponent},
+{path:'email',component:EmailComponent},
+{path:'address',component:AddressComponent},
+{path:'admin',component:AdminComponent},
+{path:'meterials',component:MeterialsComponent},
+{path:'supplier',component:SupplierComponent},
+{path:'dashboard',component:DashboardComponent},
 ];
 
 @NgModule({

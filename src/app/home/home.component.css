@@ -1,0 +1,116 @@
+#slider {
+      height: 100%;
+      overflow: hidden;
+  }  
+  @keyframes slider {
+    0% {
+ left: 0;
+}
+    30% {
+ left: 0;
+}
+    33% {
+ left: -100%;
+}
+    63% {
+ left: -100%;
+}
+    66% {
+ left: -200%;
+}
+    95% {
+ left: -200%;
+}
+    100% {
+ left: 0;
+}
+  }
+  @keyframes righttoleft {
+    0%    {
+right: 0px;
+top: 0px;
+}
+    25%  {
+ right: 80px;
+ top: 0px;
+}
+       }
+  #slider figure {
+      animation: 9s slider infinite;
+      height: 70vh;
+      position: relative;
+      width:300%;
+  }
+  #slider figure img {
+      float: left;
+      height : 100%;
+      width: 33.333333333%;
+  }  
+  .feature{
+      height: 65vh;
+      margin-left: 80px;
+  }
+  .solution{
+      animation-direction: alternate;
+      animation-duration: 10s;
+      animation: righttoleft 20s 2;
+      height: 60vh;
+      margin-bottom: 20px;
+      margin-left: 50pc;
+      margin-top: -10px;
+      position: relative;
+  }
+  .head{
+    margin-top: 19px;
+  }
+  h1{
+              color: rgb(93, 15, 172);
+              font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+              margin-top: 10px;
+          }
+
+  .list{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 22px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: -410px;
+      width:50%;
+      word-spacing: 10px;
+      /* letter-spacing: x; */
+    
+  }
+  .grid-container {
+    display: grid;
+    gap: 50px 100px;
+    grid-template-columns: auto auto auto;
+    /* background-color: #2196F3; */
+    padding: 10px;
+  }
+  
+  .grid-item {
+    /* background-color: rgba(59, 58, 58, 0.8); 
+    border: 1px solid rgba(0, 0, 0, 0.8);  */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+  }
+  .template{
+    
+      display: grid;
+      gap: 50px 100px;
+      grid-template-columns: auto auto auto;
+      /* background-color: #2196F3; */
+      padding: 10px;
+    margin-top: 50px;
+  }
+  .head1
+  {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(16, 7, 26);
+
+  }
+  .part{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
