@@ -51,10 +51,10 @@ Register(formObject:any){
   return this.http.post('http://localhost:8000/addquery',formObject);
 
 }
-material(){
+meterial(){
   // console.log('hello');
   
-  return this.http.get('http://localhost:8000/material/');
+  return this.http.get('http://localhost:8000/meterial/');
 }
 materialId(id:any){
   return this.http.get(`http://localhost:8000/materialId/${id}`);

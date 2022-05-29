@@ -22,7 +22,8 @@ app.post("/create", (request, response) => {
     email_id: request.body.email_id,
     password: request.body.password,
     confirm_password: request.body.confirm_password,
-    contact_no:request.body.contact_no
+    contact_no:request.body.contact_no,
+    type:"user",
   };
   dbconnection.create(object,"textile_industry").then((res)=>{
     if(res){
@@ -72,8 +73,13 @@ app.post("/postquery", (request, response, next) => {
 });
 app.get("/getUser", (request, response) => {
   console.log(request);
+  var data={
+    selector:{
+      type:"user",
+    }
+  }
   console.log("Fetching Begins");
-  dbconnection.get("textile_industry").then((res) => {
+  dbconnection.get(data,"textile_industry").then((res) => {
     if (res) {
       response.send(res);
     } else {
@@ -101,7 +107,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
      }
     });
   });
-  // -------------------------------------------------------------//
+  // --------------------------meterials-----------------------------------//
   app.post("/createmat", (request, response, next) => {
     console.log(request);
     var object = {
@@ -111,16 +117,31 @@ app.delete("/delete/:id/:id1", (request, response) => {
       sup_ID:request.body.sup_ID,
       sup_name:request.body.sup_name,
       quantity:request.body.quantity,
-      Cost:request.body.Cost
+      Cost:request.body.Cost,
+      type:"meterial"
     };
    
     
-    dbconnection.insert(object);
+    dbconnection.insert(object,"textile_industry").then((res)=>{
+      if(res){
+        response.send(res);
+      }
+  else{
+       response.send(err);
+    console.log("Data added");
+
+  }
+    });
     console.log("Data added");
   });
-  app.get("/material",(request,response)=>{
+  app.get("/meterial",(request,response)=>{
     console.log(request);
-    dbconnection.get("textile_industry").then((res) => {
+    var data={
+      selector:{
+        type:"meterial"
+      }
+    }
+    dbconnection.get(data,"textile_industry").then((res) => {
       if (res) {
         response.send(res);
       } else {
@@ -148,7 +169,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
       }
      });
    });
-  //--------------------------------------------------------------------// 
+  //------------------------suppliers--------------------------------------------// 
   app.post("/createsup", (request, response, next) => {
     console.log(request);
     var object = {
@@ -158,16 +179,31 @@ app.delete("/delete/:id/:id1", (request, response) => {
       email_id:request.body.email_id,
       aadhar:request.body.aadhar,
       city:request.body.city,
-      state:request.body.State
+      state:request.body.State,
+      type:"supplier"
     };
    
     
-    dbconnection.insert(object);
+    dbconnection.insert(object,"textile_industry").then((res)=>{
+      if(res){
+        response.send(res);
+      }
+  else{
+       response.send(err);
     console.log("Data added");
+
+  }
+    })
+  
   });
   app.get("/getsup", (request, response) => {
     console.log(request);
-    dbconnection.get("textile_industry").then((res) => {
+    var data={
+      selector:{
+        type:"supplier",
+      }
+    }
+    dbconnection.get(data,"textile_industry").then((res) => {
       if (res) {
         response.send(res);
       } else {

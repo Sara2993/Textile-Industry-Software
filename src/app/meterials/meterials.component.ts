@@ -31,7 +31,7 @@ ngOnInit(): void {
   
   
   })
-  this.getsupplier();
+  this.getmeterial();
 }
 Register(Formvalue:NgForm){
   console.log(Formvalue);
@@ -68,29 +68,29 @@ Register(Formvalue:NgForm){
   
 //   })
 // }
-getsupplier(){
-  this.api.supplier().subscribe(data=>{
+getmeterial(){
+  this.api.meterial().subscribe(data=>{
     console.log(data);
     console.log('Data was fetching');
     this.alldata=data;
-    this.alldata=this.alldata.rows;
+    this.alldata=this.alldata.docs;
     console.log(this.alldata);
-    for(const i in this.alldata){
-      if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-        const elt = this.alldata[i];
-        console.log(elt.id);
-        this.api.supplierId(elt.id).subscribe(res=>{
-          console.log(res);
-          this.object1.push(res);
+    for(const i of this.alldata){
+      // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
+      //   const elt = this.alldata[i];
+      //   console.log(elt.id);
+      //   this.api.supplierId(elt.id).subscribe(res=>{
+      //     console.log(res);
+          this.object1.push(i);
           console.log('Fetched successfuly in add component');
           console.log('Fetched supplier',this.object1);
-          
-        })
-      }
+            // })
+      
+      // }
 
     }
   
-  })
+  });
 }
 deleteuser(data:any,data1:any){
   this.api.remove(data._id,data1._rev).subscribe(res=>{

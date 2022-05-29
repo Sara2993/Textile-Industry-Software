@@ -18,6 +18,7 @@ import { ApiServiceService } from '../apiservices.service';
     adduser!:FormGroup;
     alldata:any;
     term!:string;
+    flag=0
     constructor(private fb:FormBuilder,private api:ApiServiceService) {
    
     }
@@ -40,28 +41,28 @@ import { ApiServiceService } from '../apiservices.service';
       console.log(data);
       })
       
-    }
+     }
     getuser(){
       this.api.supplier().subscribe(data=>{
         console.log(data);
         console.log('Data was fetching');
         this.alldata=data;
-        this.alldata=this.alldata.rows;
+        this.alldata=this.alldata.docs;
         console.log(this.alldata);
-        for(const i in this.alldata){
-          if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-            const elt = this.alldata[i];
-            console.log(elt.id);
-            this.api.supplierId(elt.id).subscribe(res=>{
-              console.log(res);
-              this.object.push(res);
+        for(const i of this.alldata){
+          // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
+          //   const elt = this.alldata[i];
+          //   console.log(elt.id);
+          //   this.api.supplierId(elt.id).subscribe(res=>{
+          //     console.log(res);
+              this.object.push(i);
               console.log('Fetched successfuly in add component');
-            })
-          }
+            // })
+          // }
     
         }
       
-      })
+      });
     }
     deleteuser(data:any,data1:any){
       this.api.clear(data._id,data1._rev).subscribe(res=>{
@@ -69,7 +70,18 @@ import { ApiServiceService } from '../apiservices.service';
       })
          
     }
-    
-    }
+    // Register(Formvalue:any){
+    //     console.log(Formvalue);
+    //     for (const iterator of this.object) {
+    //      if(iterator.aadhar == Formvalue.aadhar){
+    //       this.flag=this.flag+1;
+    //       location.reload();
+    //       alert('aadhar number exist')
+    //      } 
+    //       }
+      
+      
+    // }
+  }
     
     

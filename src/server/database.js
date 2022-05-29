@@ -31,8 +31,8 @@ insert = function (paramsvalue) {
 create=function(id,dbname,){
   return cloudant.use(dbname).insert(id);
 }
-get = function (dbname) {
-  return cloudant.use(dbname).list();
+get = function (admindata,dbname) {
+  return cloudant.use(dbname).find(admindata);
 };
 getId = function (id, dbname) {
   return cloudant.use(dbname).get(id);
@@ -42,4 +42,4 @@ del_id = function (id, id1, dbname) {
 };
 
 
-module.exports = { foodchain,get, getId, insert,del_id,create };
+module.exports = { get, getId, insert,del_id,create };
