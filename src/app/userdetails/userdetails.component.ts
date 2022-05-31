@@ -3,34 +3,20 @@ import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
 import { ApiServiceService } from '../apiservices.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-userdetails',
+  templateUrl: './userdetails.component.html',
+  styleUrls: ['./userdetails.component.css']
 })
-export class SignupComponent implements OnInit {
+export class UserdetailsComponent implements OnInit {
   register!:FormGroup;
   value:boolean=true;
   object:any =[];
   adduser!:FormGroup;
   alldata:any;
-
-   
   constructor(private fb:FormBuilder,private api:ApiServiceService) {
-      this.register = this.fb.group({
-      first_name:['',Validators.required],
-      last_name:['',Validators.required],
-      email_id:['',Validators.required],
-      password:['',Validators.required],
-      confirm_password:['',Validators.required],
-      contact_no:['',Validators.required],
-
-    })
-   }
-
-  ngOnInit(): void {
-  
   }
- 
+  ngOnInit(): void {
+  }
   Register(Formvalue:NgForm){
     console.log(Formvalue);
     window.location.reload();//avoid double clicks
@@ -67,7 +53,4 @@ export class SignupComponent implements OnInit {
     })
        
      }
-     
-  }
-
-
+}

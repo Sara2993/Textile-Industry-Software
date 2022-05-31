@@ -1,0 +1,19 @@
+.btn1234{
+    width: 40%;
+    margin-left: 10%;
+
+}
+.btn12345{
+    /* margin-left: 55%;
+    margin-top: -2%; */
+    /* width: 10%; */
+    padding: 5px 10px;
+    background: blue;
+    text-align: center;
+    border: 1%;    position: absolute;
+    top: 16%;
+    left: 52%;
+}
+.table123{
+    margin-top: 3%;
+}

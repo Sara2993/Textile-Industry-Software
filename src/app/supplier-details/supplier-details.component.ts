@@ -1,39 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
 import { ApiServiceService } from '../apiservices.service';
-
 @Component({
-  selector: 'app-prodouts',
-  templateUrl: './prodouts.component.html',
-  styleUrls: ['./prodouts.component.css']
+  selector: 'app-supplier-details',
+  templateUrl: './supplier-details.component.html',
+  styleUrls: ['./supplier-details.component.css']
 })
-export class ProdoutsComponent implements OnInit {
-  register!:FormGroup;
+export class SupplierDetailsComponent implements OnInit {
+  myform!:FormGroup;
   value:boolean=true;
   object:any =[];
   adduser!:FormGroup;
   alldata:any;
   term!:string;
+  flag=0;
   constructor(private fb:FormBuilder,private api:ApiServiceService) {
-    this.register = this.fb.group({
-    Serial_no:['',Validators.required],
-    date:['',Validators.required],
-    item_name:['',Validators.required],
-    quantity:['',Validators.required]
-
-  })
   }
+
   ngOnInit(): void {
   }
   Register(Formvalue:NgForm){
     console.log(Formvalue);
-    this.api.create(Formvalue).subscribe(data =>{
+    window.location.reload();//avoid double click
+    this.api.create2(Formvalue).subscribe(data =>{
     console.log(data);
     })
     
-  }
-  getproducts(){
-    this.api.products().subscribe(data=>{
+   }
+  getuser(){
+    this.api.supplier().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
@@ -43,23 +38,21 @@ export class ProdoutsComponent implements OnInit {
         // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
         //   const elt = this.alldata[i];
         //   console.log(elt.id);
-        //   this.api.getUserId(elt.id).subscribe(res=>{
+        //   this.api.supplierId(elt.id).subscribe(res=>{
         //     console.log(res);
             this.object.push(i);
             console.log('Fetched successfuly in add component');
-        //   })
+          // })
         // }
-
+  
       }
     
     });
   }
   deleteuser(data:any,data1:any){
-    this.api.remove(data._id,data1._rev).subscribe(res=>{
-      console.log('Your data was Deleted from the database');
+    this.api.clear(data._id,data1._rev).subscribe(res=>{
+      alert('Your data was Deleted from the database');
     })
        
   }
- 
-  }
-
+}

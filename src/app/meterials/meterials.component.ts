@@ -15,7 +15,9 @@ value:boolean=true;
 object:any =[];
 alldata:any;
 term!:string;
-object1:any=[]
+object1:any=[];
+object2:any=[];
+flag=0;
 constructor(private fb:FormBuilder,private api:ApiServiceService) {
  
 }
@@ -23,6 +25,7 @@ ngOnInit(): void {
   this.myform = this.fb.group({
     Serial_no:['',Validators.required],
     Pro_ID:['',Validators.required],
+    Pro_type:['',Validators.required],
     Pro_name:['',Validators.required],
     sup_ID:['',Validators.required],
     sup_name:['',Validators.required],
@@ -32,42 +35,17 @@ ngOnInit(): void {
   
   })
   this.getmeterial();
+  this.getuser();
 }
 Register(Formvalue:NgForm){
   console.log(Formvalue);
+  window.location.reload();//avoid double click
   this.api.create1(Formvalue).subscribe(data =>{
   console.log(data);
   })
   
 }
-// getmat(){
-//   console.log('calling');
-  
-//   this.api.material().subscribe(data=>{
-//     console.log(data);
-//     console.log('Data was fetching');
-//     this.alldata=data;
-//     this.alldata=this.alldata.rows;
-//     console.log(this.alldata);
-//     console.log('in matteraila');
-    
-//     for(const i in this.alldata){
-//       if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-//         const elt = this.alldata[i];
-//         console.log(elt.id);
-//         this.api.materialId(elt.id).subscribe(res=>{
-//           console.log(res);
-//           this.object.push(res);
-//           console.log('Fetched successfuly in add component');
-//           console.log('products fetched');
-          
-//         })
-//       }
 
-//     }
-  
-//   })
-// }
 getmeterial(){
   this.api.meterial().subscribe(data=>{
     console.log(data);
@@ -92,12 +70,50 @@ getmeterial(){
   
   });
 }
+// ------------relation supplier to meterial---------------//
+getuser(){
+  this.api.supplier().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.alldata=data;
+    this.alldata=this.alldata.docs;
+    console.log(this.alldata);
+    for(const i of this.alldata){
+      // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
+      //   const elt = this.alldata[i];
+      //   console.log(elt.id);
+      //   this.api.supplierId(elt.id).subscribe(res=>{
+      //     console.log(res);
+          this.object2.push(i);
+          console.log('Fetched successfuly in add component');
+        // })
+      // }
+
+    }
+  
+  });
+}
 deleteuser(data:any,data1:any){
   this.api.remove(data._id,data1._rev).subscribe(res=>{
     console.log('Your data was Deleted from the database');
   })
      
 }
+shift(event:any){
+  console.log('hello');
+  for (const key in this.object2) {
+    if (Object.prototype.hasOwnProperty.call(this.object2, key)) {
+      const element = this.object2[key];
+      console.log(element);
+     var value=element.Serial_id;
+     console.log(value);
+     if(value==event.target.value){
+       console.log("working");
+       this.myform.controls["sup_name"].setValue(element.name);
+     }
+    }
 
+  }
+}
 }
 

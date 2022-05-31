@@ -25,18 +25,20 @@ object:any=[];
       console.log(data);
       console.log('Data was fetching');
       this.alldata=data;
-      this.alldata=this.alldata.rows;
+      this.alldata=this.alldata.docs;
       console.log(this.alldata);
-      for(const i in this.alldata){
-          const elt = this.alldata[i];
-          console.log(elt.id);
-          this.api.getUserId(elt.id).subscribe(res=>{
-            console.log(res);
-            this.object.push(res);
+      for(const i of this.alldata){
+          // const elt = this.alldata[i];
+          // console.log(elt.id);
+          // this.api.getUserId(elt.id).subscribe(res=>{
+          //   console.log(res);
+            this.object.push(i);
             console.log('Fetched successfuly');
-          })
+      //     })
+      // }
       }
     });
+    
     this.loginForm = this.formbuilder.group(
       {
         'username':['',Validators.required],

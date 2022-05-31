@@ -159,10 +159,20 @@ section {
     justify-content: space-between;
     color: lightblue;
   }
+  
+  .heading1 {
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
+    color: lightblue;
+  }
   .btn {
     padding: 5px 10px;
     background: blue;
     text-align: center;
+    margin-left: 24%;
+    margin-right: -73%;
+    margin-top: -13%;
   }
   table {
     margin-top: 10px;
@@ -240,5 +250,14 @@ section {
       padding: 10px;
     }
   }
-  
+
+  .btn123{
+    border: transparent;
+    color: white;
+    background-color: transparent;
+    width: 152%;
+  }
+  .user{
+    margin-left: 200px;
+  }
   

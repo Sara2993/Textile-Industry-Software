@@ -1,0 +1,30 @@
+<div class="form-outline">
+    <div class="btn1234">
+    <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
+   
+    <div ><button class="btn12345" (click)="getproducts()">fetch</button></div> </div>
+  </div>
+<div class="table123">
+  <table class="table bg-light">
+    <thead class="text-dark">
+        <tr>
+            <th scope="col">Serial_no</th>
+            <th scope="col">Date</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Qty</th>
+
+        </tr>
+    </thead>
+    <tbody class="text-dark">
+        <tr *ngFor="let obj of object |filter:term">
+            <td scope="row">{{obj.Serial_no}}</td>
+            <td scope="row">{{obj.date}}</td>
+            <td scope="row">{{obj.item_name}}</td>
+            <td scope="row">{{obj.quantity}}</td>
+            <td scope="row"><button class="btn btn-primary"
+                    (click)="deleteuser(obj,obj)">delete</button></td>
+
+        </tr>
+    </tbody>
+</table>
+</div>

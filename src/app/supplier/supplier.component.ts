@@ -18,7 +18,7 @@ import { ApiServiceService } from '../apiservices.service';
     adduser!:FormGroup;
     alldata:any;
     term!:string;
-    flag=0
+    flag=0;
     constructor(private fb:FormBuilder,private api:ApiServiceService) {
    
     }
@@ -36,7 +36,7 @@ import { ApiServiceService } from '../apiservices.service';
     }
     Register(Formvalue:NgForm){
       console.log(Formvalue);
-      window.location.reload();
+      window.location.reload();//avoid double click
       this.api.create2(Formvalue).subscribe(data =>{
       console.log(data);
       })

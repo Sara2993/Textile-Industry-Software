@@ -13,9 +13,13 @@ import { AdminComponent } from './admin/admin.component';
 import { MeterialsComponent } from './meterials/meterials.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
+import { StockmaintainDetailsComponent } from './stockmaintain-details/stockmaintain-details.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 const routes: Routes = [
 {path:'',component:LoginComponent},
+{path:'login',component:LoginComponent},
 {path:'main',component:MainComponent},
 {path:'contact',component:ContactUsComponent},
 {path:'signup',component:SignupComponent},
@@ -28,6 +32,10 @@ const routes: Routes = [
 {path:'meterials',component:MeterialsComponent},
 {path:'supplier',component:SupplierComponent},
 {path:'dashboard',component:DashboardComponent},
+{path:'supllierdetails',component:SupplierDetailsComponent},
+{path:'stockdetails',component:StockmaintainDetailsComponent},
+{path:'userdetails',component:UserdetailsComponent},
+
 ];
 
 @NgModule({

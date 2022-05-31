@@ -28,7 +28,7 @@ export class ApiServiceService {
     return this.http.delete(`http://localhost:8000/delete/${id}/${id1}`);
   }
   create(id:any){
-   return this.http.post('http://localhost:8000/create',id);
+   return this.http.post('http://localhost:8000/createsto',id);
    
   }
   create1(id:any){
@@ -49,6 +49,10 @@ export class ApiServiceService {
 }
 Register(formObject:any){
   return this.http.post('http://localhost:8000/addquery',formObject);
+
+}
+products(){
+  return this.http.get('http://localhost:8000/getsto/');
 
 }
 meterial(){

@@ -1,7 +1,7 @@
 <!-- <form> -->
-<div class="form-outline">
+<!-- <div class="form-outline">
     <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
-</div>
+</div> -->
 
 
 <!-- <div class="search">
@@ -33,26 +33,36 @@
                         formControlName="Pro_name">
                 </div> -->
                 <div class="field">
-                <label for="cars" >Pro.Name:</label>
-                <select name="products" class="products" formControlName="Pro_name" >
-                    <option value="select">select</option>
-                    <option value="cotton">Cotton</option>
-                    <option value="silk">Silk</option>
-                    <option value="Polyester">Polyester</option>
-                    <option value="denium">Denium</option>
-                </select>
+                    <label for="cars">Pro.Type:</label>
+                    <select name="products" class="products" formControlName="Pro_type">
+                        <option value="select">select</option>
+                        <option value="cotton">Cotton</option>
+                        <option value="silk">Silk</option>
+                        <option value="Polyester">Polyester</option>
+                        <option value="denium">Denium</option>
+                    </select>
                 </div>
                 <div class="field">
-                    <label for="cars" >Sup.ID:</label>
-                    <select name="products" class="products" formControlName="sup_ID"  >
-                        <option *ngFor="let sup of object1">{{sup. Serial_id}}</option>
+                    <label for="cars">Pro.name:</label>
+                    <select name="products" class="products" formControlName="Pro_name">
+                        <option value="select">select</option>
+                        <option value="cotton">Sarees</option>
+                        <option value="silk">shirts</option>
+                        <option value="Polyester">Jeans</option>
+                        <option value="denium">Betchits</option>
                     </select>
-                    </div>
-                    <div class="field">
-                        <label for="Pro.ID">SUP.name:</label>
-                        <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your Pro.ID"
-                            id="Pro.ID" formControlName="sup_name">
-                    </div>
+                </div>
+                <div class="field">
+                    <label for="cars">Sup.ID:</label>
+                    <select name="products" class="products" formControlName="sup_ID" (change)="shift($event)">
+                        <option *ngFor="let sup of object2">{{sup. Serial_id}}</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="Pro.ID">SUP.name:</label>
+                    <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
+                        placeholder="Enter your sup name" id="Pro.ID" formControlName="sup_name">
+                </div>
                 <div class="field">
                     <label for="report">Qty :</label>
                     <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
@@ -65,46 +75,45 @@
                 </div>
                 <div class="buttons">
 
-                    <button id="btn" (click)="Register(this.myform.value)" >OK</button>
-                    
+                    <button id="btn" (click)="Register(this.myform.value)">OK</button>
+
 
                     <button id="btn">Cancel</button>
-                    <button (click)="getmeterial()">fetch</button>
+                    <!-- <button type="butten" (click)="getmeterial()">fetch</button> -->
                 </div>
             </div>
         </div>
     </div>
 </form>
-                <table class="table bg-light">
-                    <thead class="text-dark">
-                        <tr>
-                            <th scope="col">Serial_no</th>
-                            <th scope="col">Pro_ID</th>
-                            <th scope="col">Pro_name</th>
-                            <th scope="col">sup_name</th>
-                            <th scope="col">sup_ID</th>
-                            <th scope="col">quantity</th>
-                            <th scope="col">Cost</th>
+<!-- <table class="table bg-light">
+    <thead class="text-dark">
+        <tr>
+            <th scope="col">Serial_no</th>
+            <th scope="col">Pro_ID</th>
+            <th scope="col">Pro_type</th>
+            <th scope="col">Pro_name</th>
+            <th scope="col">sup_name</th>
+            <th scope="col">sup_ID</th>
+            <th scope="col">quantity</th>
+            <th scope="col">Cost</th>
 
 
-                        </tr>
-                    </thead>
-                    <tbody class="text-dark">
-                        <tr>
-                        <tr *ngFor="let obj of object |filter:term">
-                            <td scope="row">{{obj.Serial_no}}</td>
-                            <td scope="row">{{obj.Pro_ID}}</td>
-                            <td scope="row">{{obj.Pro_name}}</td>
-                            <td scope="row">{{obj.sup_name}}</td>
-                            <td scope="row">{{obj.sup_ID}}</td>
-                            <td scope="row">{{obj.quantity}}</td>
-                            <td scope="row">{{obj.Cost}}</td>
+        </tr>
+    </thead>
+    <tbody class="text-dark">
+        <tr>
+        <tr *ngFor="let obj of object |filter:term">
+            <td scope="row">{{obj.Serial_no}}</td>
+            <td scope="row">{{obj.Pro_ID}}</td>
+            <td scope="row">{{obj.Pro_type}}</td>
+            <td scope="row">{{obj.Pro_name}}</td>
+            <td scope="row">{{obj.sup_name}}</td>
+            <td scope="row">{{obj.sup_ID}}</td>
+            <td scope="row">{{obj.quantity}}</td>
+            <td scope="row">{{obj.Cost}}</td>
 
-                            <td scope="row"><button class="btn btn-primary"
-                                    (click)="deleteuser(obj,obj)">delete</button></td> 
+            <td scope="row"><button class="btn btn-primary" (click)="deleteuser(obj,obj)">delete</button></td>
 
-                        </tr>
-                    </tbody>
-                </table>
-
-    
+        </tr>
+    </tbody>
+</table> -->

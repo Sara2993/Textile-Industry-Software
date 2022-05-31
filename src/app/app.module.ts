@@ -19,6 +19,9 @@ import { AdminComponent } from './admin/admin.component';
 import { MeterialsComponent } from './meterials/meterials.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
+import { StockmaintainDetailsComponent } from './stockmaintain-details/stockmaintain-details.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdminComponent,
     MeterialsComponent,
     SupplierComponent,
-    DashboardComponent
+    DashboardComponent,
+    SupplierDetailsComponent,
+    StockmaintainDetailsComponent,
+    UserdetailsComponent
    
   ],
   imports: [
