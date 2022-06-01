@@ -165,6 +165,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
       sup_name:request.body.sup_name,
       quantity:request.body.quantity,
       Cost:request.body.Cost,
+      key:request.body.key,
       type:"meterial"
     };
    

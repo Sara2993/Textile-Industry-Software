@@ -55,11 +55,11 @@
                 <div class="field">
                     <label for="cars">Sup.ID:</label>
                     <select name="products" class="products" formControlName="sup_ID" (change)="shift($event)">
-                        <option *ngFor="let sup of object2">{{sup. Serial_id}}</option>
+                        <option *ngFor="let sup of object2" class="text-dark">{{sup. Serial_id}}</option>
                     </select>
                 </div>
                 <div class="field">
-                    <label for="Pro.ID">SUP.name:</label>
+                    <label for="Pro.ID">Sup.name:</label>
                     <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
                         placeholder="Enter your sup name" id="Pro.ID" formControlName="sup_name">
                 </div>

@@ -18,6 +18,9 @@ term!:string;
 object1:any=[];
 object2:any=[];
 flag=0;
+mydata1:any=[];
+check:any=0;
+iobj:any=[]
 constructor(private fb:FormBuilder,private api:ApiServiceService) {
  
 }
@@ -37,14 +40,57 @@ ngOnInit(): void {
   this.getmeterial();
   this.getuser();
 }
-Register(Formvalue:NgForm){
-  console.log(Formvalue);
-  window.location.reload();//avoid double click
-  this.api.create1(Formvalue).subscribe(data =>{
-  console.log(data);
-  })
+Register(Formvalue:any){
+  this.api.supplier().subscribe(data=>{
+    console.log(data);
+    console.log('Data was fetching');
+    this.mydata1=data;
+    this.mydata1=this.mydata1.docs;
+    console.log(this.mydata1);
+    for(const i of this.mydata1){
+      this.iobj=i;
+      if(i.company==Formvalue.company){
+        this.check=1;
+        var obj={
+          Serial_no:Formvalue.Serial_no,
+          Pro_ID:Formvalue. Pro_ID,
+          Pro_type:Formvalue.Pro_type,
+          sup_ID:Formvalue.sup_ID,
+          sup_name:Formvalue. sup_name,
+          quantity:Formvalue.quantity,
+          Cost:Formvalue.Cost,
+          key:this.iobj._id
+
+        }
+        // console.log(Formvalue);
+        window.location.reload();//avoid double click
+        this.api.create1(obj).subscribe(data =>{
+        console.log(data);
+        })
+      }
+      // if(Object.prototype.hasOwnProperty.call(this.mydata1,i)){
+      //   const elt = this.mydata1[i];
+      //   console.log(elt.id);
+      //   this.api.supplierId(elt.id).subscribe(res=>{
+      //     console.log(res);
+          // this.object.push(i);
+          // console.log('Fetched successfuly in add component');
+        // })
+      // }
+
+    }
   
+  });
 }
+
+
+// }
+
+// getmeterial(){
+// this.api.meterial().subscribe(data=>{
+//   console.log(data);
+  
+// }
 
 getmeterial(){
   this.api.meterial().subscribe(data=>{
