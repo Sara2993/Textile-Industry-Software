@@ -260,4 +260,7 @@ section {
   .user{
     margin-left: 200px;
   }
+  .emp th{
+    color: blue;
+  }
   

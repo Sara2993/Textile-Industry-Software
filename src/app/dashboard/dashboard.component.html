@@ -106,62 +106,27 @@
           </div>
           <table class="emp">
             <thead>
-              <td>S.Id</td>
-              <td>Name</td>
-              <td>Contact</td>
-              <td>Email-id</td>
+              <tr>
+                <th >Serial_id</th>
+                <th >name</th>
+                <th >contact</th>
+                <th >email_id</th>
+                <th >aadhar</th>
+                <th >city</th>
+                <th >State</th>
+            </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>124ESF</td>
-                <td>Anisha</td>
-                <td>9087653421</td>
-                <td>anisha7890@gmail.com
-                  <!-- <i class="far fa-eye"></i>
-                  <i class="far fa-edit"></i>
-                  <i class="far fa-trash-alt"></i> -->
-                </td>
+              <tr *ngFor="let obj of object ">
+                <td scope="row">{{obj.Serial_id}}</td>
+                <td scope="row">{{obj.name}}</td>
+                <td scope="row">{{obj.contact}}</td>
+                <td scope="row">{{obj.email_id}}</td>
+                <td scope="row">{{obj.aadhar}}</td>
+                <td scope="row">{{obj.city}}</td>
+                <td scope="row">{{obj.State}}</td>
               </tr>
-              <tr>
-                <td>256FGH</td>
-                <td>priya</td>
-                <td>8976532314</td>
-                <td>priya9098@gmail.com
-                  <!-- <i class="far fa-eye"></i>
-                  <i class="far fa-edit"></i>
-                  <i class="far fa-trash-alt"></i> -->
-                </td>
-              </tr>
-              <tr>
-                <td>389FTY</td>
-                <td>Dhivya</td>
-                <td>9086467732</td>
-                <td>dhivya3745@gmail.com
-                  <!-- <i class="far fa-eye"></i>
-                  <i class="far fa-edit"></i>
-                  <i class="far fa-trash-alt"></i> -->
-                </td>
-              </tr>
-              <tr>
-                <td>478BNF</td>
-                <td>Raji</td>
-                <td>8907653424</td>
-                <td>Raji6789@gmail.com
-                  <!-- <i class="far fa-eye"></i>
-                  <i class="far fa-edit"></i>
-                  <i class="far fa-trash-alt"></i> -->
-                </td>
-              </tr>
-              <tr>
-                <td>578GJI</td>
-                <td>Rithi</td>
-                <td>9087556566</td>
-                <td>Rithi4567@gmail.com
-                  <!-- <i class="far fa-eye"></i>
-                  <i class="far fa-edit"></i>
-                  <i class="far fa-trash-alt"></i> -->
-                </td>
-              </tr>
+    
             </tbody>
           </table>
         </div>
@@ -179,27 +144,14 @@
               <td>cost</td>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>12-03-2022</td>
-                <td>Cotton</td>
-                <td>2000</td>
-                <!-- <td><i class="far fa-eye"></i></td> -->
+              <tr  *ngFor="let obj of object " >
+                <td>{{obj.Serial_no}}</td>
+                <td>{{obj.date}}</td>
+                <td>{{obj.item_name}}</td>
+                <td>{{obj.quantity}}</td>
+               
               </tr>
-              <tr>
-                <td>2</td>
-                <td>24-07-2021</td>
-                <td>Silk</td>
-                <td>3000</td>
-                <!-- <td><i class="far fa-eye"></i></td> -->
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>12-05-2021</td>
-                <td>polyester</td>
-                <td>5000s</td>
-                <!-- <td><i class="far fa-eye"></i></td> -->
-              </tr>
+    
             </tbody>
           </table>
          

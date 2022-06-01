@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
  
   Register(Formvalue:NgForm){
     console.log(Formvalue);
-    window.location.reload();//avoid double clicks
+    window.location.reload();//avoid double click
     this.api.signup(Formvalue).subscribe(data =>{
     console.log(data);
     })
