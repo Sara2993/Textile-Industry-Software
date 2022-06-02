@@ -62,21 +62,12 @@ Register(Formvalue:any){
           key:this.iobj._id
 
         }
-        // console.log(Formvalue);
         window.location.reload();//avoid double click
         this.api.create1(obj).subscribe(data =>{
         console.log(data);
         })
       }
-      // if(Object.prototype.hasOwnProperty.call(this.mydata1,i)){
-      //   const elt = this.mydata1[i];
-      //   console.log(elt.id);
-      //   this.api.supplierId(elt.id).subscribe(res=>{
-      //     console.log(res);
-          // this.object.push(i);
-          // console.log('Fetched successfuly in add component');
-        // })
-      // }
+     
 
     }
   

@@ -186,9 +186,7 @@ section {
   td {
     color: white;
   }
-  table tr {
-    border-bottom: 1px solid silver;
-  }
+  
   table tr:hover {
     background: gray;
     color: white;

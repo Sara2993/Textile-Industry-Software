@@ -56,7 +56,6 @@ products(){
 
 }
 meterial(){
-  // console.log('hello');
   
   return this.http.get('http://localhost:8000/meterial/');
 }

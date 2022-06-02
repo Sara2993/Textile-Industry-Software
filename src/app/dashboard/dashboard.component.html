@@ -29,12 +29,7 @@
             </a>
           </li>
   
-          <!-- <li>
-            <a href="employee">
-              <i class="fa-solid fa-user-graduate"></i>
-              <div class="title">Offers</div>
-            </a>
-          </li>-->
+          
           <li> 
             <a>
               <i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -43,18 +38,7 @@
           </li>
         </ul>
       </div>
-      <!-- <div class="top">
-        <div class="top-bar">
-          <div class="search">
-            <input type="text" name="search" placeholder="search here" />
-            <label for="search"><i class="fas fa-search"></i></label>
-          </div> -->
-      <!-- <i class="fas fa ball"></i>
-          <div class="logo">
-            <img src="../../assets/logo.png" alt="" />
-          </div>
-        </div>
-      </div> -->
+     
       <div class="cards">
         <div class="card">
           <div class="card-content">
@@ -118,6 +102,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let obj of object ">
+
                 <td scope="row">{{obj.Serial_id}}</td>
                 <td scope="row">{{obj.name}}</td>
                 <td scope="row">{{obj.contact}}</td>
@@ -125,8 +110,10 @@
                 <td scope="row">{{obj.aadhar}}</td>
                 <td scope="row">{{obj.city}}</td>
                 <td scope="row">{{obj.State}}</td>
+                <!-- <hr style="color:white ;width:10vw"> -->
+                
               </tr>
-    
+              
             </tbody>
           </table>
         </div>
@@ -149,9 +136,7 @@
                 <td>{{obj.date}}</td>
                 <td>{{obj.item_name}}</td>
                 <td>{{obj.quantity}}</td>
-               
               </tr>
-    
             </tbody>
           </table>
          

@@ -52,11 +52,5 @@ object:any=[];
         this.flag = 1;
     }
  }
-  if(this.flag == 1 ){
-    
-  }
-  else{
-      this.notify = "invalid user";
-  }
 }
 }
