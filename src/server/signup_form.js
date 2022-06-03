@@ -1,11 +1,11 @@
 const connection = require("express");
 const bodyparser = require("body-parser");
 const app = connection();
-// app.use(express.static("public"));
 const port = 8000;
 const winlogger=require('./logger/logger');
 const cors = require("cors");
 const dbconnection = require("./database");
+const mail=require("./sendemail")
 const { request } = require("http");
 app.use(connection.static("public"));
 app.use(bodyparser.json());
@@ -34,27 +34,6 @@ else{
 }
   })
 });
-// app.get("/get_all_query/:id", (request, response) => {
-//   console.log('get id', request.params.id);
-//   var fetchdata = {
-//     selector: {
-//       id: request.params.id,
-//     },
-//   };
-//    dbconnection.foodchain.find(fetchdata).then((res) => {
-//      if (res) {
-//     console.log(res);
-//      response.json(res);
-//      } else {
-//      response.send("error");
-//      }
-//      });
-    
-    
-//    console.log("end");
-//   });
-  
-  
  
 app.post("/postquery", (request, response, next) => {
   console.log(request);
@@ -279,6 +258,53 @@ app.delete("/delete/:id/:id1", (request, response) => {
       }
      });
    });
+// ---------------------------------------mail--------------------------------------
+app.post('/post_msg', (request, response) => {
+  var object = {
+    
+    email: request.body.email,
+   
+    message: request.body.message,
+
+    type : "contact"
+  };
+  dbconnection.insert(object,"textile-industry").then((res) => {
+    if (res) {
+
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+  console.log('Data added');
+});
+app.get('/get_msg', (request, response) => {
+  console.log('start');
+  var data={
+    selector:{
+      type:"contact",
+    }
+  }
+
+  dbconnection.get(data,"textile_industry").then((res) => {
+    if (res) {
+      response.send(res);
+    } else {
+      response.send('error');
+    }
+  });
+});
+
+app.post('/mail', (request, response) => {
+  console.log("******hi");
+  console.log(request.body.message);
+  mail.getemail(request.body.email,request.body.message)
+
+  console.log('Data added');
+});
+
+  
+
 
 app.listen(port, (err) => {
   if (err) {

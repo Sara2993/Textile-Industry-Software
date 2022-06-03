@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiServiceService {
   
   constructor(private  http:HttpClient) {
+    
    }
    logindata(id: any) {
       return this.http.get(`http://localhost:8000/get_all_query/${id}`);
@@ -40,9 +41,9 @@ export class ApiServiceService {
     
    }
   contact(formobject:any){
-    console.log('Haii!!..Grasim Industries Ltd..My  cotton thread is running out of stock so send me the availablestock');
+    console.log('Haii!!.textile industry ..My  cotton thread is running out of stock so send me the availablestock');
     
-    return this.http.post('http://localhost:8000/mail/',formobject)
+    return this.http.post('http://localhost:8000/mail',formobject);
 }
  getdata(id: any) {
   return this.http.get(`http://localhost:8000/get_all_query/${id}`);
@@ -74,4 +75,11 @@ supplierId(id:any){
 clear(id:any,id1:any){
   return this.http.delete(`http://localhost:8000/clear/${id}/${id1}`);
 }
+addmessage(doc:any){
+  console.log(doc);
+  return this.http.post('http://localhost:8000/post_msg/',doc)
+}
+getmessage(){
+  return this.http.get('http://localhost:8000/get_msg/')
+ }
 }

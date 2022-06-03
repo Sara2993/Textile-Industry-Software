@@ -1,4 +1,5 @@
-<form class="col-lg-8" [formGroup]="contact" (ngSubmit)="send(this.contact.value)">
+<form class="col-lg-8" [formGroup]="addform" (ngSubmit)="addmessage(this.addform.value)">
+    <form>
     <b>
         <h1 class="heading">CONTACT</h1>
     </b>
@@ -17,8 +18,7 @@
         </div> -->
         <div class="field">
             <label for="Message">Message:</label>
-            <input type="text" name="message" placeholder=" Enter your message" id="message"
-                formControlName="message">
+            <input type="text" name="message" placeholder=" Enter your message" id="message" formControlName="message">
 
         </div>
         <!-- <div class="validate"> <span class="text-danger"
@@ -27,9 +27,10 @@
         </div> -->
         <div class="buttons">
 
-            <button class="btn btn-md btn-dark"  type="submit">Send</button>
+            <button class="contact_form_submit" (click)="addmessage(this.addform.value)">Send</button>
+            <button>send</button>
 
         </div>
     </div>
-    
+
 </form>

@@ -8,26 +8,32 @@ import { ApiServiceService } from '../apiservices.service';
   styleUrls: ['./email.component.css']
 })
   export class EmailComponent implements OnInit {
-    contact!: FormGroup;
+    addform!: FormGroup;
     value:boolean=true;
+    
+  store: any;
   constructor(private fb:FormBuilder,private api:ApiServiceService) {
   }
   
     ngOnInit(): void {
-      this.contact= this.fb.group({
+      this.addform= this.fb.group({
         
         email_id:['',Validators.required],
         message:['',Validators.required],
 
       })
     }
-    send(Formvalue:NgForm){
-      console.log("Hai!!");
-      console.log(Formvalue);
-      this.api.contact(Formvalue).subscribe((data)=>{
-        console.log(Formvalue);
-        
-      })
+    addmessage(formvalue:NgForm){
+      console.log('hi');
+      console.log(formvalue);
+      this.store.push(formvalue)
+      this.api.addmessage(formvalue).subscribe(res=>{
+       console.log("hello"+res);
+       console.log("Your data was posted successfully!");
+       // window.location.replace("/query")
+       alert('your data is added successfully')
+       },rej=>{
+       console.log("opps! Can not post data"+rej);
+       });
     }
-    
-}
+    }

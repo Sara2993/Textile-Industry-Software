@@ -40,6 +40,22 @@ export class ProdoutsComponent implements OnInit {
       this.alldata=this.alldata.docs;
       console.log(this.alldata);
       for(const i of this.alldata){
+        console.log('i',i.quantity);
+     
+        console.log('i',i.item_name);
+        if(i.quantity < 20)
+        {
+          const object={
+            message : `${i.item_name}` + 'is a Low stock available in Industry please update' + `${i.quantity}`,
+            email:'anishamani9095@gmail.com'
+          }
+         
+          console.log("Product details",i.quantity);
+          this.api.contact(object).subscribe(res=>{
+            console.log("hello"+res);
+            console.log("Your data was posted successfully!");
+        })
+    
         // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
         //   const elt = this.alldata[i];
         //   console.log(elt.id);
@@ -51,7 +67,7 @@ export class ProdoutsComponent implements OnInit {
         // }
 
       }
-    
+      }
     });
   }
   deleteuser(data:any,data1:any){

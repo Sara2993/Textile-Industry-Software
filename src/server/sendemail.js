@@ -2,18 +2,21 @@ const nodemail = require('nodemailer');
 var sender = nodemail.createTransport({
     service:'gmail',
     auth:{
-        email_id:'textileindustry242@gmail.com',
-        message:'My Cotton Thread is running Out of Stock so send me the available stock'
+        user:"sosapp24@gmail.com",
+        
+        pass:'SOSAPP@24'
+
+
     }
 })
-module.exports.getemail = function(params)
+module.exports.getemail = function(email,inform)
 {
   
     var composemail = {
-        from:'textileindustry242@gmail.com',
-        to:params,
+        from:'sosapp24@gmail.com',
+        to:email,
         subject:'node email',
-        text:'My Cotton Thread is running Out of Stock so send me the available stock'
+        text:inform
     }
     sender.sendMail(composemail,function(err,res){
         if(err)
