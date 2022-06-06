@@ -1,28 +1,29 @@
-    <!-- <button  class="btn12345" (click)="getuser()">fetch</button> -->
-    
-    <table class="table bg-light">
-        <thead class="text-dark">
-            <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Email id</th>
-                <th scope="col">Password</th>
-                <th scope="col">Confirm Password</th>
-                <th scope="col">phone no</th>
+<!-- <button  class="btn12345" (click)="getuser()">fetch</button> -->
 
-            </tr>
-        </thead>
-        <tbody class="text-dark">
-            <tr *ngFor="let obj of object">
-                <td scope="row">{{obj.first_name}}</td>
-                <td scope="row">{{obj.last_name}}</td>
-                <td scope="row">{{obj.email_id}}</td>
-                <td scope="row">{{obj.password}}</td>
-                <td scope="row">{{obj.confirm_password}}</td>
-                <td scope="row">{{obj.contact_no}}</td>
+<table class="table bg-light">
+    <caption>user details</caption>
+    <thead class="text-dark">
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email id</th>
+            <th scope="col">Password</th>
+            <th scope="col">Confirm Password</th>
+            <th scope="col">phone no</th>
 
-                  <td scope="row"><button class="btn btn-primary" (click)="deleteuser(obj,obj)">Delete</button></td>
-  
-            </tr>
-        </tbody>
-    </table>
+        </tr>
+    </thead>
+    <tbody class="text-dark">
+        <tr *ngFor="let obj of object">
+            <td scope="row">{{obj.first_name}}</td>
+            <td scope="row">{{obj.last_name}}</td>
+            <td scope="row">{{obj.email_id}}</td>
+            <td scope="row">{{obj.password}}</td>
+            <td scope="row">{{obj.confirm_password}}</td>
+            <td scope="row">{{obj.contact_no}}</td>
+
+            <td scope="row"><button class="btn btn-primary" (click)="deleteuser(obj,obj)">Delete</button></td>
+
+        </tr>
+    </tbody>
+</table>
