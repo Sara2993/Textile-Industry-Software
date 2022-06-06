@@ -67,15 +67,7 @@ app.get("/getUser", (request, response) => {
     }
   });
 });
-app.get("/getUserId/:id", (request, response) => {
-  dbconnection.getId(request.params.id, "textile_industry").then((res) => {
-    if (res) {
-      response.send(res);
-    } else {
-      response.send("error");
-    }
-  });
-});
+
 app.delete("/delete/:id/:id1", (request, response) => {
    dbconnection
     .del_id(request.params.id, request.params.id1, "textile_industry")
