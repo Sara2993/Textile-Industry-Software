@@ -41,10 +41,10 @@ ngOnInit(): void {
   this.getuser();
 }
 Register(Formvalue:any){
-  this.api.supplier().subscribe(data=>{
-    console.log(data);
+  this.api.supplier().subscribe(data1=>{
+    console.log(data1);
     console.log('Data was fetching');
-    this.mydata1=data;
+    this.mydata1=data1;
     this.mydata1=this.mydata1.docs;
     console.log(this.mydata1);
     for(const i of this.mydata1){
@@ -63,8 +63,8 @@ Register(Formvalue:any){
 
         }
         window.location.reload();//avoid double click
-        this.api.create1(obj).subscribe(data =>{
-        console.log(data);
+        this.api.create1(obj).subscribe(data3 =>{
+        console.log(data3);
         })
       }
      
