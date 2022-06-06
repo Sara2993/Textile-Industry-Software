@@ -25,6 +25,7 @@
     "logger": "0.0.1",
     "nano": "^10.0.0",
     "ng2-search-filter": "^0.5.1",
+    "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "winston": "^3.7.2",

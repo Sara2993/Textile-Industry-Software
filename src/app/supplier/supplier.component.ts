@@ -35,10 +35,11 @@ import { ApiServiceService } from '../apiservices.service';
     }
     Register(Formvalue:NgForm){
       console.log(Formvalue);
-      window.location.reload();//avoid double click
       this.api.create2(Formvalue).subscribe(data =>{
       console.log(data);
       })
+      window.location.reload();//avoid double clicks
+
       
      }
     getuser(){

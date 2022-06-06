@@ -3,6 +3,7 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiServiceService } from '../apiservices.service';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,13 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 loginform!:FormGroup;
 
-  constructor(private  http:HttpClient,private formbuilder:FormBuilder, private router:Router,private api:ApiServiceService) { 
+  constructor(private  http:HttpClient,private formbuilder:FormBuilder, private router:Router,private api:ApiServiceService,private toastr:ToastrService) { 
   }
   loginForm!:FormGroup;
 
 alldata :any;
 flag = 0;
-notify= '';
+// notify= '';
 object:any=[];
   ngOnInit(): void {
     this.api.getUser().subscribe(data=>{
@@ -55,10 +56,13 @@ object:any=[];
     }
  }
   if(this.flag == 1 ){
+    this.toastr.success("valid user");
 this.router.navigate(['/home']);
   }
   else{
-      this.notify = "invalid user..";
+      // this.notify = "invalid user..";
+      this.toastr.error("invalid user");
+
   }
 }
 }

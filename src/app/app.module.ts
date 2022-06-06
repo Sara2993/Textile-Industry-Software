@@ -22,6 +22,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SupplierDetailsComponent } from './supplier-details/supplier-details.component';
 import { StockmaintainDetailsComponent } from './stockmaintain-details/stockmaintain-details.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +55,10 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatIconModule,FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    ToastrModule.forRoot(),
     
   ],
   providers: [],
