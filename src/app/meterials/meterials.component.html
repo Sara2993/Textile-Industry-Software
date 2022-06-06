@@ -10,9 +10,9 @@
     </div>
 </form> -->
 <form [formGroup]="myform">
-    <b>
+    <strong>
         <h1 class="heading">ADD PRODUCTS</h1>
-    </b>
+    </strong>
     <div action="#" id="form" method="post">
 
         <div class="container">
@@ -27,11 +27,7 @@
                     <input type="text" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*" placeholder="Enter your Pro.ID"
                         id="Pro.ID" formControlName="Pro_ID">
                 </div>
-                <!-- <div class="field">
-                    <label for="Pro.Name">Pro.Name:</label>
-                    <input type="text" name="Pro.Name" placeholder="Enter your Item Name" id="Pro_Name"
-                        formControlName="Pro_name">
-                </div> -->
+             
                 <div class="field">
                     <label for="cars">Pro.Type:</label>
                     <select name="products" class="products" formControlName="Pro_type">

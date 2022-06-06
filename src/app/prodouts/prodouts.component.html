@@ -1,18 +1,18 @@
 <!-- <form> -->
-    <div class="form-outline">
-            <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
-          </div>
-        
-        
-    <!-- <div class="search">
+<div class="form-outline">
+    <input type="search" [(ngModel)]="term" class="form-control mt-5 search" placeholder="Type to search" />
+</div>
+
+
+<!-- <div class="search">
         <input type="search" placeholder="Type to search">
         <button type="search" class="next">Search</button>
     </div> -->
 <!-- </form> -->
 <form [formGroup]="register">
-    <b>
+    <strong>
         <h1 class="heading">STOCK MAINTAIN</h1>
-    </b>
+    </strong>
     <div action="#" id="form" method="post">
         <div class="container">
             <div class="tab tab-2">
@@ -30,7 +30,7 @@
                     <label for="date-of-birth">Date :</label>
                     <input type="date" name="date" id="date" formControlName="date">
                 </div>
-               
+
                 <div class="field">
                     <label for="report">Qty :</label>
                     <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
