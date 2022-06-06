@@ -35,7 +35,7 @@ else{
   })
 });
  
-app.post("/postquery", (request, response, next) => {
+app.post("/postquery", (request, _response, _next) => {
   console.log(request);
   let object = {
     first_name: request.body.first_name,
@@ -126,7 +126,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
      });
    });
   // --------------------------meterials-----------------------------------//
-  app.post("/createmat", (request, response, next) => {
+  app.post("/createmat", (request, response, _next) => {
     console.log(request);
     let object = {
       Serial_no: request.body. Serial_no,
@@ -189,7 +189,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
      });
    });
   //------------------------suppliers--------------------------------------------// 
-  app.post("/createsup", (request, response, next) => {
+  app.post("/createsup", (request, response, _next) => {
     console.log(request);
     let object = {
       Serial_id: request.body. Serial_id,

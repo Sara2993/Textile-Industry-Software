@@ -14,14 +14,14 @@ app.use(
     })
 )
 
-app.get('/', function (request, response) {
+app.get('/', function (_request, response) {
     response.json({"name":"saraswathi"});
   });
 
-  app.post('/mail',(request,response,next)=>{
+  app.post('/mail',(request,_response,_next)=>{
     console.log('hai hello!!');
    
-    var object ={
+    let object ={
         email_id:request.body.email_id,
         message:request.body.message,
         

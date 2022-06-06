@@ -1,5 +1,5 @@
 const nodemail = require('nodemailer');
-var sender = nodemail.createTransport({
+let sender = nodemail.createTransport({
     service:'gmail',
     auth:{
         user:"sosapp24@gmail.com",
@@ -12,7 +12,7 @@ var sender = nodemail.createTransport({
 module.exports.getemail = function(email,inform)
 {
   
-    var composemail = {
+    let composemail = {
         from:'sosapp24@gmail.com',
         to:email,
         subject:'node email',
