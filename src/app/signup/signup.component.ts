@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log("ngOnInit")
   
   }
  
@@ -56,7 +57,7 @@ export class SignupComponent implements OnInit {
     })
   }
   deleteuser(data:any,data1:any){
-    this.api.remove(data._id,data1._rev).subscribe(res=>{
+    this.api.remove(data._id,data1._rev).subscribe(_res=>{
       console.log('Your data was Deleted from the database');
     })
        

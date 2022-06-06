@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup,NgForm,Validators } from '@angular/forms';
+import { FormBuilder,FormGroup,NgForm } from '@angular/forms';
 import { ApiServiceService } from '../apiservices.service';
 
 @Component({
@@ -44,7 +44,7 @@ export class StockmaintainDetailsComponent implements OnInit {
     
   
   deleteuser(data:any,data1:any){
-    this.api.remove(data._id,data1._rev).subscribe(res=>{
+    this.api.remove(data._id,data1._rev).subscribe(_res=>{
       console.log('Your data was Deleted from the database');
       location.reload();
     })

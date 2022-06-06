@@ -60,7 +60,7 @@ import { ApiServiceService } from '../apiservices.service';
       });
     }
     deleteuser(data:any,data1:any){
-      this.api.clear(data._id,data1._rev).subscribe(res=>{
+      this.api.clear(data._id,data1._rev).subscribe(_res=>{
         alert('Your data was Deleted from the database');
       })
          

@@ -75,13 +75,7 @@ Register(Formvalue:any){
 }
 
 
-// }
 
-// getmeterial(){
-// this.api.meterial().subscribe(data=>{
-//   console.log(data);
-  
-// }
 
 getmeterial(){
   this.api.meterial().subscribe(data=>{
@@ -91,47 +85,35 @@ getmeterial(){
     this.alldata=this.alldata.docs;
     console.log(this.alldata);
     for(const i of this.alldata){
-      // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-      //   const elt = this.alldata[i];
-      //   console.log(elt.id);
-      //   this.api.supplierId(elt.id).subscribe(res=>{
-      //     console.log(res);
+     
           this.object1.push(i);
           console.log('Fetched successfuly in add component');
           console.log('Fetched supplier',this.object1);
-            // })
-      
-      // }
-
+           
     }
   
   });
 }
 // ------------relation supplier to meterial---------------//
 getuser(){
-  this.api.supplier().subscribe(data=>{
-    console.log(data);
+  this.api.supplier().subscribe(data2=>{
+    console.log(data2);
     console.log('Data was fetching');
-    this.alldata=data;
+    this.alldata=data2;
     this.alldata=this.alldata.docs;
     console.log(this.alldata);
     for(const i of this.alldata){
-      // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-      //   const elt = this.alldata[i];
-      //   console.log(elt.id);
-      //   this.api.supplierId(elt.id).subscribe(res=>{
-      //     console.log(res);
+     
           this.object2.push(i);
           console.log('Fetched successfuly in add component');
-        // })
-      // }
+       
 
     }
   
   });
 }
 deleteuser(data:any,data1:any){
-  this.api.remove(data._id,data1._rev).subscribe(res=>{
+  this.api.remove(data._id,data1._rev).subscribe(_res=>{
     console.log('Your data was Deleted from the database');
   })
      
@@ -142,7 +124,7 @@ shift(event:any){
     if (Object.prototype.hasOwnProperty.call(this.object2, key)) {
       const element = this.object2[key];
       console.log(element);
-     var value=element.Serial_id;
+     let value=element.Serial_id;
      console.log(value);
      if(value==event.target.value){
        console.log("working");

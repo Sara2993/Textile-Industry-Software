@@ -45,7 +45,7 @@ export class SupplierDetailsComponent implements OnInit {
  
   
   deleteuser(data:any,data1:any){
-    this.api.clear(data._id,data1._rev).subscribe(res=>{
+    this.api.clear(data._id,data1._rev).subscribe(_res=>{
     location.reload();
     })
        
