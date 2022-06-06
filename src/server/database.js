@@ -31,13 +31,13 @@ insert = function (paramsvalue) {
 create=function(id,dbname,){
   return cloudant.use(dbname).insert(id);
 }
-get = function (admindata,dbname) {
+let get = function (admindata,dbname) {
   return cloudant.use(dbname).find(admindata);
 };
-getId = function (id, dbname) {
+let getId = function (id, dbname) {
   return cloudant.use(dbname).get(id);
 };
-del_id = function (id, id1, dbname) {
+let del_id = function (id, id1, dbname) {
   return cloudant.use(dbname).destroy(id, id1);
 };
 
