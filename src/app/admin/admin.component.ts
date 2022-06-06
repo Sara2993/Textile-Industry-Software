@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormGroup,Validators, } from '@angular/forms';
 import { ApiServiceService } from '../apiservices.service';
 
 @Component({
