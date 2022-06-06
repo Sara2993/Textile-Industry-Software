@@ -51,7 +51,7 @@ app.post("/postquery", (_request, _response, _next) => {
   dbconnection.insert(object);
   console.log("Data added");
 });
-app.get("/getUser", (request, response) => {
+app.get("/getUser", (_request, response) => {
   console.log(request);
   let data={
     selector:{
@@ -98,7 +98,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
   }
     })
   });
-  app.get("/getsto", (request, response) => {
+  app.get("/getsto", (_request, response) => {
     console.log(request);
     let data={
       selector:{
