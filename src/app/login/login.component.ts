@@ -19,7 +19,7 @@ loginform!:FormGroup;
 
 alldata :any;
 flag = 0;
-// notify= '';
+
 object:any=[];
   ngOnInit(): void {
     this.api.getUser().subscribe(data=>{

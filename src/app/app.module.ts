@@ -13,7 +13,6 @@ import{MatIconModule} from '@angular/material/icon';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ProdoutsComponent } from './prodouts/prodouts.component';
 import { EmailComponent } from './email/email.component';
-import { AddressComponent } from './address/address.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminComponent } from './admin/admin.component';
 import { MeterialsComponent } from './meterials/meterials.component';
@@ -39,7 +38,6 @@ import { CommonModule } from '@angular/common';
     AboutUsComponent,
     ProdoutsComponent,
     EmailComponent,
-    AddressComponent,
     AdminComponent,
     MeterialsComponent,
     SupplierComponent,
