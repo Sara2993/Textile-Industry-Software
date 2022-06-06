@@ -51,7 +51,7 @@ Register(Formvalue:any){
       this.iobj=i;
       if(i.company==Formvalue.company){
         this.check=1;
-        var obj={
+        let obj={
           Serial_no:Formvalue.Serial_no,
           Pro_ID:Formvalue. Pro_ID,
           Pro_type:Formvalue.Pro_type,

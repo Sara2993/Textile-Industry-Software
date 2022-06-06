@@ -16,7 +16,7 @@ app.use(
 );
 app.post("/create", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     first_name: request.body.first_name,
     last_name: request.body.last_name,
     email_id: request.body.email_id,
@@ -37,7 +37,7 @@ else{
  
 app.post("/postquery", (request, response, next) => {
   console.log(request);
-  var object = {
+  let object = {
     first_name: request.body.first_name,
     last_name: request.body.last_name,
     email_id: request.body.email_id,
@@ -53,7 +53,7 @@ app.post("/postquery", (request, response, next) => {
 });
 app.get("/getUser", (request, response) => {
   console.log(request);
-  var data={
+  let data={
     selector:{
       type:"user",
     }
@@ -82,7 +82,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   // -------------------------stock-maintain--------------------------------//
   app.post("/createsto", (request, response) => {
     console.log(request);
-    var object = {
+    let object = {
       Serial_no: request.body. Serial_no,
       date: request.body.date,
       item_name: request.body.item_name,
@@ -100,7 +100,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   });
   app.get("/getsto", (request, response) => {
     console.log(request);
-    var data={
+    let data={
       selector:{
         type:"stock-maintain",
       }
@@ -128,7 +128,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   // --------------------------meterials-----------------------------------//
   app.post("/createmat", (request, response, next) => {
     console.log(request);
-    var object = {
+    let object = {
       Serial_no: request.body. Serial_no,
       Pro_ID: request.body.Pro_ID,
       Pro_type: request.body.Pro_type,
@@ -155,7 +155,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   });
   app.get("/meterial",(request,response)=>{
     console.log(request);
-    var data={
+    let data={
       selector:{
         type:"meterial"
       }
@@ -191,7 +191,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   //------------------------suppliers--------------------------------------------// 
   app.post("/createsup", (request, response, next) => {
     console.log(request);
-    var object = {
+    let object = {
       Serial_id: request.body. Serial_id,
       name: request.body.name,
       contact: request.body.contact,
@@ -217,7 +217,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
   });
   app.get("/getsup", (request, response) => {
     console.log(request);
-    var data={
+    let data={
       selector:{
         type:"supplier",
       }
@@ -252,7 +252,7 @@ app.delete("/delete/:id/:id1", (request, response) => {
    });
 // ---------------------------------------mail--------------------------------------
 app.post('/post_msg', (request, response) => {
-  var object = {
+  let object = {
     
     email: request.body.email,
    
@@ -272,7 +272,7 @@ app.post('/post_msg', (request, response) => {
 });
 app.get('/get_msg', (request, response) => {
   console.log('start');
-  var data={
+  let data={
     selector:{
       type:"contact",
     }
