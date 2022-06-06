@@ -1,153 +1,149 @@
 <section>
-    <div class="container">
-      <div class="sidebar">
-        <ul>
-          <li>
-            <a href="#">
-              <div class="title">REXTILE-INDUSTRY-SOFTWARE</div>
-            </a>
-          </li>
-          <li>
-            <a >
-              <em class="fas fa-th-large"></em>
-              <div class="title">
-                <button class="btn123"   routerLink="/home">
-                Home</button></div>
-            </a>
-          </li>
-  
-          <li>
-            <a >
-              <i class="fa-solid fa-address-card"></i>
-              <div class="title"> <button class="btn123" routerLink="/about"> About us</button></div>
-            </a>
-          </li>
-          <li>
-            <a >
-              <i class="fa-solid fa-laptop-file"></i>
-              <div class="title" ><button class="btn123" routerLink="/contact"> Contact us</button></div>
-            </a>
-          </li>
-  
-          
-          <li> 
-            <a>
-              <i class="fa-solid fa-arrow-right-to-bracket"></i>
-              <div class="title"><button class="btn123" routerLink="/login">Logout</button></div>
-            </a>
-          </li>
-        </ul>
-      </div>
-     
-      <div class="cards">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-name">Rating</div>
-            <div class="numbers">4.5/5</div>
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="#">
+            <div class="title">REXTILE-INDUSTRY-SOFTWARE</div>
+          </a>
+        </li>
+        <li>
+          <a>
+            <em class="fas fa-th-large"></em>
+            <div class="title">
+              <button class="btn123" routerLink="/home">
+                Home</button>
+            </div>
+          </a>
+        </li>
 
-          </div>
-          <div class="icon-box">
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-name">Offers</div>
-            <div class="numbers">30%</div>
+        <li>
+          <a>
+            <em class="fa-solid fa-address-card"></em>
+            <div class="title"> <button class="btn123" routerLink="/about"> About us</button></div>
+          </a>
+        </li>
+        <li>
+          <a>
+            <em class="fa-solid fa-laptop-file"></em>
+            <div class="title"><button class="btn123" routerLink="/contact"> Contact us</button></div>
+          </a>
+        </li>
 
-          </div>
-          <div class="icon-box">
-            <i class="fa-solid fa-face-grin-hearts"></i>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-name">Quality</div>
 
-            <div class="numbers">98.9%</div>
-          </div>
-          <div class="icon-box">
-            <i class="fa-solid fa-star-half-stroke"></i>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-name">Collections</div>
-            <div class="numbers">100+</div>
-
-          </div>
-          <div class="icon-box">
-            <i class="fa-solid fa-box-open"></i>
-          </div>
-        </div>
-      </div>
-      <div class="tables">
-        <div class="last-emp">
-          <div class="heading">
-            <h2>Supplier details</h2>
-            <a><button class="btn" routerLink="/supllierdetails"
-              > View All</button></a>
-          </div>
-          <table class="emp">
-            <thead>
-              <tr>
-                <th >Serial_id</th>
-                <th >name</th>
-                <th >contact</th>
-                <th >email_id</th>
-                <th >aadhar</th>
-                <th >city</th>
-                <th >State</th>
-            </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let obj of object ">
-
-                <td scope="row">{{obj.Serial_id}}</td>
-                <td scope="row">{{obj.name}}</td>
-                <td scope="row">{{obj.contact}}</td>
-                <td scope="row">{{obj.email_id}}</td>
-                <td scope="row">{{obj.aadhar}}</td>
-                <td scope="row">{{obj.city}}</td>
-                <td scope="row">{{obj.State}}</td>
-                <!-- <hr style="color:white ;width:10vw"> -->
-                
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
-        <div class="last-emp">
-          <div class="heading">
-            <h2>stock maintain</h2>
-            <a><button class="btn" routerLink="/stockdetails"
-              > View All</button></a>
-          </div>
-          <table class="visiting">
-            <thead>
-              <td>S.NO</td>
-              <td>Date</td>
-              <td>product Name</td>
-              <td>cost</td>
-            </thead>
-            <tbody>
-              <tr  *ngFor="let obj of object " >
-                <td>{{obj.Serial_no}}</td>
-                <td>{{obj.date}}</td>
-                <td>{{obj.item_name}}</td>
-                <td>{{obj.quantity}}</td>
-              </tr>
-            </tbody>
-          </table>
-         
-        </div>
-        <div class="heading1">
-          <h2>User details</h2>
-          <a><button class="btn" routerLink="/userdetails"
-            > View All</button></a>
-          </div>
-      </div>
+        <li>
+          <a>
+            <em class="fa-solid fa-arrow-right-to-bracket"></em>
+            <div class="title"><button class="btn123" routerLink="/login">Logout</button></div>
+          </a>
+        </li>
+      </ul>
     </div>
 
-  </section>
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-name">Rating</div>
+          <div class="numbers">4.5/5</div>
 
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-name">Offers</div>
+          <div class="numbers">30%</div>
+
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-face-grin-hearts"></i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-name">Quality</div>
+
+          <div class="numbers">98.9%</div>
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-name">Collections</div>
+          <div class="numbers">100+</div>
+
+        </div>
+        <div class="icon-box">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+      </div>
+    </div>
+    <div class="tables">
+      <div class="last-emp">
+        <div class="heading">
+          <h2>Supplier details</h2>
+          <a><button class="btn" routerLink="/supllierdetails"> View All</button></a>
+        </div>
+        <table class="emp">
+          <thead>
+            <tr>
+              <th>Serial_id</th>
+              <th>name</th>
+              <th>contact</th>
+              <th>email_id</th>
+              <th>aadhar</th>
+              <th>city</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of object ">
+
+              <td scope="row">{{obj.Serial_id}}</td>
+              <td scope="row">{{obj.name}}</td>
+              <td scope="row">{{obj.contact}}</td>
+              <td scope="row">{{obj.email_id}}</td>
+              <td scope="row">{{obj.aadhar}}</td>
+              <td scope="row">{{obj.city}}</td>
+              <td scope="row">{{obj.State}}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="last-emp">
+        <div class="heading">
+          <h2>stock maintain</h2>
+          <a><button class="btn" routerLink="/stockdetails"> View All</button></a>
+        </div>
+        <table class="visiting">
+          <thead>
+            <td>S.NO</td>
+            <td>Date</td>
+            <td>product Name</td>
+            <td>cost</td>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of object ">
+              <td>{{obj.Serial_no}}</td>
+              <td>{{obj.date}}</td>
+              <td>{{obj.item_name}}</td>
+              <td>{{obj.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="heading1">
+        <h2>User details</h2>
+        <a><button class="btn" routerLink="/userdetails"> View All</button></a>
+      </div>
+    </div>
+  </div>
+
+</section>
