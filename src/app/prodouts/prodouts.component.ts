@@ -56,15 +56,9 @@ export class ProdoutsComponent implements OnInit {
             console.log("Your data was posted successfully!");
         })
     
-        // if(Object.prototype.hasOwnProperty.call(this.alldata,i)){
-        //   const elt = this.alldata[i];
-        //   console.log(elt.id);
-        //   this.api.getUserId(elt.id).subscribe(res=>{
-        //     console.log(res);
             this.object.push(i);
             console.log('Fetched successfuly in add component');
-        //   })
-        // }
+      
 
       }
       }
