@@ -125,16 +125,16 @@
         <table class="visiting">
           <caption>stock maintain</caption>
           <thead>
-            <td>S.NO</td>
-            <td>Date</td>
-            <td>product Name</td>
-            <td>cost</td>
+            <tr>
+            <th>product Name</th>
+            <th>Date</th>
+            <th>cost</th>
+            </tr>
           </thead>
           <tbody>
             <tr *ngFor="let obj of object ">
-              <td>{{obj.Serial_no}}</td>
-              <td>{{obj.date}}</td>
               <td>{{obj.item_name}}</td>
+              <td>{{obj.date}}</td>
               <td>{{obj.quantity}}</td>
             </tr>
           </tbody>
