@@ -14,7 +14,7 @@ app.use(
     origin: "http://localhost:4200",
   })
 );
-app.post("/create", (request, response) => {
+app.post("/create", (_request, response) => {
   console.log(request);
   let object = {
     first_name: request.body.first_name,
