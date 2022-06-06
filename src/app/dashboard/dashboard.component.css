@@ -165,9 +165,6 @@ section {
     font-weight: 600;
     color: rgb(57, 57, 160);
   }
-  td {
-    color: white;
-  }
   
   table tr:hover {
     background: gray;
@@ -178,6 +175,8 @@ section {
   }
   td {
     padding: 9px 5px;
+    color: white;
+
   }
   td i {
     padding: 7px;

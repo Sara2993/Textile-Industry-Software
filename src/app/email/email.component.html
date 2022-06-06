@@ -10,21 +10,13 @@
                 formControlName="email_id">
 
         </div>
-        <!-- <div class="validator">
-            <span class="text-danger"
-                *ngIf="register.controls['email_id'].touched && register.hasError('required','email_id')">
-                *email is required</span>
-
-        </div> -->
+       
         <div class="field">
             <label for="Message">Message:</label>
             <input type="text" name="message" placeholder=" Enter your message" id="message" formControlName="message">
 
         </div>
-        <!-- <div class="validate"> <span class="text-danger"
-                *ngIf="password.controls['password'].touched">
-                *password is required</span>
-        </div> -->
+       
         <div class="buttons">
 
             <button class="contact_form_submit" (click)="addmessage(this.addform.value)">Send</button>
