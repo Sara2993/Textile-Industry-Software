@@ -7,7 +7,7 @@ let password = "e455d34a303110b468819fbc14388b5e";
  
 let cloudant = Cloudant({ url: url, username: username, password: password });
 let foodchain=cloudant.use('textile_industry');
-data={
+let data={
   selector:{
     id:'user',
     password:'saraswathi'
@@ -16,7 +16,7 @@ data={
  
 
  
-insert = function (paramsvalue) {
+let insert = function (paramsvalue) {
   console.log(paramsvalue);
   cloudant
     .use("textile_industry")
@@ -28,7 +28,7 @@ insert = function (paramsvalue) {
       console.log(err);
     });
 };
-create=function(id,dbname,){
+let create=function(id,dbname,){
   return cloudant.use(dbname).insert(id);
 }
 let get = function (admindata,dbname) {
