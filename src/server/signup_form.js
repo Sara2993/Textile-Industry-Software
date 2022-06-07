@@ -6,7 +6,6 @@ const winlogger=require('./logger/logger');
 const cors = require("cors");
 const dbconnection = require("./database");
 const mail=require("./sendemail")
-const { request } = require("http");
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
