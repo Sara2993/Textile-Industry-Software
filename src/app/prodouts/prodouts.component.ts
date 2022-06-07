@@ -31,9 +31,11 @@ export class ProdoutsComponent implements OnInit {
     this.api.create(Formvalue).subscribe(data =>{
     console.log(data);
     })
-    
+    window.location.reload();//avoid double click
   }
   getproducts(){
+
+
     this.api.products().subscribe(data=>{
       console.log(data);
       console.log('Data was fetching');

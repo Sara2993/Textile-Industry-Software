@@ -22,7 +22,7 @@
                 </div>
                 
                 <div class="field">
-                    <label for="report">Qty :</label>
+                    <label for="report">Quantity :</label>
                     <input type="number" name="report" pattern="[A-Za-z]*[0-9]*[A-Za-z]*"
                         placeholder="Enter your Quantity" id="quantity" formControlName="quantity">
                 </div>
@@ -33,29 +33,31 @@
                     <button id="btn">Cancel</button>
                     <button (click)="getproducts()">Fetch</button>
                 </div>
-                <table class="table bg-light">
-                    <caption></caption>
-                    <thead class="text-dark">
-                        <tr>
-                            <th scope="col">Item Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Qty</th>
-
-                        </tr>
-                    </thead>
-                    <tbody class="text-dark">
-                        <tr *ngFor="let obj of object |filter:term">
-                            <td >{{obj.item_name}}</td>
-                            <td >{{obj.date}}</td>
-                            <td >{{obj.quantity}}</td>
-                            <td ><button class="btn btn-primary"
-                                    (click)="deleteuser(obj,obj)">delete</button></td>
-
-                        </tr>
-                    </tbody>
-                </table>
+                
 
             </div>
         </div>
     </div>
 </form>
+<table class="table bg-light" id="table">
+    <caption></caption>
+    <thead class="text-dark">
+        <tr>
+            <th scope="col">Item Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Qty</th>
+
+
+        </tr>
+    </thead>
+    <tbody class="text-dark">
+        <tr *ngFor="let obj of object |filter:term">
+            <td >{{obj.item_name}}</td>
+            <td >{{obj.date}}</td>
+            <td >{{obj.quantity}}</td>
+            <td ><button class="btn btn-primary"
+                    (click)="deleteuser(obj,obj)">delete</button></td>
+
+        </tr>
+    </tbody>
+</table>

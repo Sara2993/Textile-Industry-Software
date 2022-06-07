@@ -14,7 +14,7 @@ app.use(
     origin: "http://localhost:4200",
   })
 );
-app.post("/create", (_request, response) => {
+app.post("/create", (request, response) => {
   console.log(request);
   let object = {
     first_name: request.body.first_name,
@@ -35,7 +35,7 @@ else{
   })
 });
  
-app.post("/postquery", (_request, _response, _next) => {
+app.post("/postquery", (request, _response, _next) => {
   console.log(request);
   let object = {
     first_name: request.body.first_name,
@@ -51,7 +51,7 @@ app.post("/postquery", (_request, _response, _next) => {
   dbconnection.insert(object);
   console.log("Data added");
 });
-app.get("/getUser", (_request, response) => {
+app.get("/getUser", (request, response) => {
   console.log(request);
   let data={
     selector:{
@@ -68,7 +68,7 @@ app.get("/getUser", (_request, response) => {
   });
 });
 
-app.delete("/delete/:id/:id1", (_request, response) => {
+app.delete("/delete/:id/:id1", (request, response) => {
    dbconnection
     .del_id(request.params.id, request.params.id1, "textile_industry")
     .then((res) => {
@@ -80,7 +80,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
     });
   });
   // -------------------------stock-maintain--------------------------------//
-  app.post("/createsto", (_request, response) => {
+  app.post("/createsto", (request, response) => {
     console.log(request);
     let object = {
       Serial_no: request.body. Serial_no,
@@ -98,7 +98,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
   }
     })
   });
-  app.get("/getsto", (_request, response) => {
+  app.get("/getsto", (request, response) => {
     console.log(request);
     let data={
       selector:{
@@ -114,7 +114,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
       }
     });
   });
-  app.delete("/delete/:id:id1", (_request, response) => {
+  app.delete("/delete/:id:id1", (request, response) => {
     dbconnection
      .del_id(request.params.id, request.params.id1, "textile_industry")
      .then((res) => {
@@ -126,7 +126,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
      });
    });
   // --------------------------meterials-----------------------------------//
-  app.post("/createmat", (_request, response, _next) => {
+  app.post("/createmat", (request, response, _next) => {
     console.log(request);
     let object = {
       Serial_no: request.body. Serial_no,
@@ -153,7 +153,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
     });
     console.log("Data added");
   });
-  app.get("/meterial",(_request,response)=>{
+  app.get("/meterial",(request,response)=>{
     console.log(request);
     let data={
       selector:{
@@ -168,7 +168,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
       }
     });
   })
-  app.get("/materialId/:id", (_request, response) => {
+  app.get("/materialId/:id", (request, response) => {
     dbconnection.getId(request.params.id, "textile_industry").then((res) => {
       if (res) {
         response.send(res);
@@ -177,7 +177,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
       }
     });
   });
-  app.delete("/delete/:id:id1", (_request, response) => {
+  app.delete("/delete/:id:id1", (request, response) => {
     dbconnection
      .del_id(request.params.id, request.params.id1, "textile_industry")
      .then((res) => {
@@ -189,7 +189,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
      });
    });
   //------------------------suppliers--------------------------------------------// 
-  app.post("/createsup", (_request, response, _next) => {
+  app.post("/createsup", (request, response, _next) => {
     console.log(request);
     let object = {
       Serial_id: request.body. Serial_id,
@@ -215,7 +215,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
     })
   
   });
-  app.get("/getsup", (_request, response) => {
+  app.get("/getsup", (request, response) => {
     console.log(request);
     let data={
       selector:{
@@ -230,7 +230,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
       }
     });
   });
-  app.get("/subqueryID/:id", (_request, response) => {
+  app.get("/subqueryID/:id", (request, response) => {
     dbconnection.getId(request.params.id, "textile_industry").then((res) => {
       if (res) {
         response.send(res);
@@ -239,7 +239,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
       }
     });
   });
-  app.delete("/clear/:id/:id1", (_request, response) => {
+  app.delete("/clear/:id/:id1", (request, response) => {
     dbconnection
      .del_id(request.params.id, request.params.id1, "textile_industry")
      .then((res) => {
@@ -251,7 +251,7 @@ app.delete("/delete/:id/:id1", (_request, response) => {
      });
    });
 // ---------------------------------------mail--------------------------------------
-app.post('/post_msg', (_request, response) => {
+app.post('/post_msg', (request, response) => {
   let object = {
     
     email: request.body.email,
@@ -270,7 +270,7 @@ app.post('/post_msg', (_request, response) => {
   });
   console.log('Data added');
 });
-app.get('/get_msg', (_request, response) => {
+app.get('/get_msg', (request, response) => {
   console.log('start');
   let data={
     selector:{
@@ -287,7 +287,7 @@ app.get('/get_msg', (_request, response) => {
   });
 });
 
-app.post('/mail', (_request, _response) => {
+app.post('/mail', (request, _response) => {
   console.log("******hi");
   console.log(request.body.message);
   mail.getemail(request.body.email,request.body.message)

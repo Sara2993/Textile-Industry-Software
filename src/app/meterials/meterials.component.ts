@@ -26,7 +26,6 @@ constructor(private fb:FormBuilder,private api:ApiServiceService) {
 }
 ngOnInit(): void {
   this.myform = this.fb.group({
-    Serial_no:['',Validators.required],
     Pro_ID:['',Validators.required],
     Pro_type:['',Validators.required],
     Pro_name:['',Validators.required],
@@ -52,7 +51,6 @@ Register(Formvalue:any){
       if(i.company==Formvalue.company){
         this.check=1;
         let obj={
-          Serial_no:Formvalue.Serial_no,
           Pro_ID:Formvalue. Pro_ID,
           Pro_type:Formvalue.Pro_type,
           sup_ID:Formvalue.sup_ID,
